@@ -14,3 +14,12 @@ python downsample.py --expected 10000000 --ifsort false --input /path-to-file/in
 # --output : oputput file, currently only supports output as .fatsq/.fasta
 ```
 
+## slurm submission script example
+```
+# change the input file path and other variable in shell script if necessary
+sh slurm_example.sh
+```
+
+## further
+1. add support to upsample
+2. simpler method for normalize sequence to same size

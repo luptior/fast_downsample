@@ -80,8 +80,7 @@ def downsample(expected, ifsort, f, f_out):
         else:
             p1 = subprocess.Popen(['zcat', f], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(['head', '-{}'.format(expected)], stdin=p1.stdout, stdout=subprocess.PIPE)
-            stdout = p2.communicate()[0]
-            file_len=int(stdout.split()[0].decode("utf-8", "ignore"))
+            stdout = p2.communicate()[0].decode("utf-8", "ignore")
             with open(f_out, 'w') as myfile:
                 myfile.write(stdout)
 

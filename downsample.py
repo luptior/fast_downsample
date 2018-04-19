@@ -13,13 +13,13 @@ def lowcov(f, type, f_out):
                 for line in myfile:
                     output.write(line)
                 output.close()
-                sys.exit()
+                sys.exit("Expects more than original contains, no downsampling is performed")
         else:
             with open(f, "r") as myfile:
                 for line in myfile:
                     output.write(line)
                 output.close()
-                sys.exit()
+                sys.exit("Expects more than original contains, no downsampling is performed")
 
 
 def downsample(expected, ifsort, f, f_out):

@@ -72,10 +72,18 @@ def downsample(expected, ifsort, f, f_out):
 
     if ifsort.lower() in ['f', 'fasle']:
         # if not sorted, pick first x lines of file is enough
-        process = subprocess.Popen(['head', '-{}'.format(expected), f], stdout=subprocess.PIPE)
-        stdout = process.communicate()[0].decode("utf-8", "ignore")
-        with open(f_out, 'w') as myfile:
-            myfile.write(stdout)
+        if f.split()[-1] != "gz":
+            process = subprocess.Popen(['head', '-{}'.format(expected), f], stdout=subprocess.PIPE)
+            stdout = process.communicate()[0].decode("utf-8", "ignore")
+            with open(f_out, 'w') as myfile:
+                myfile.write(stdout)
+        else:
+            p1 = subprocess.Popen(['zcat', f], stdout=subprocess.PIPE)
+            p2 = subprocess.Popen(['head', '-{}'.format(expected)], stdin=p1.stdout, stdout=subprocess.PIPE)
+            stdout = p2.communicate()[0]
+            file_len=int(stdout.split()[0].decode("utf-8", "ignore"))
+            with open(f_out, 'w') as myfile:
+                myfile.write(stdout)
 
     elif ifsort.lower() in ['t', 'true']:
         # if sorted, perform random downsample

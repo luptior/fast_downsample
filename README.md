@@ -1,2 +1,5 @@
 # fast_downsample
-downsample fasta/fastq files to given number of bp
+
+
+single script for fast downsample fasta/fastq files to specific data size
+

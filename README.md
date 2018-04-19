@@ -1,7 +1,7 @@
 # fast_downsample
 
 
-Single python script for fast downsample fasta/fastq files to specific data size.
+Single python script for fast downsample fasta/fastq files to specific data size. Also works with gizp compressed files(*.gz)
 
 
 ## linux run example

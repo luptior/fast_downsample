@@ -22,4 +22,4 @@ sh slurm_example.sh
 
 ## further
 1. add support to upsample
-2. simpler method for normalize sequence to same size
+2. simpler method for normalize a batch of sequence files to same size/depth

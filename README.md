@@ -6,7 +6,7 @@ The code requires python version after 3.5. No other environment is needed.
 
 
 ## linux run example
-```
+```sh
 python downsample.py --expected 10000000 --ifsort false --input /path-to-file/input.fasta --output /path-to-outdir/output.fasta
 # --expected : number of base of result
 # --ifsort : if the file is in order or not
@@ -15,7 +15,7 @@ python downsample.py --expected 10000000 --ifsort false --input /path-to-file/in
 ```
 
 ## slurm submission script example
-```
+```sh
 # change the input file path and other variable in shell script if necessary
 sh slurm_example.sh
 ```

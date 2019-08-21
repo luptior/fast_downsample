@@ -15,9 +15,11 @@ python downsample.py --expected 10000000 --ifsort false --input /path-to-file/in
 ```
 
 ## slurm submission script example
+Pysbatch: https://github.com/luptior/pysbatch
 ```sh
 # change the input file path and other variable in shell script if necessary
 sh slurm_example.sh
+python slurm_example.sh
 ```
 
 ## further
